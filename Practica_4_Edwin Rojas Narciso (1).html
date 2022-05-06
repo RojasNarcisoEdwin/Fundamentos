@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora consola</title>
+</head>
+<body>
+
+        <script>
+            let  option = 0;
+            let  option1 = 0;
+            let  option3 = 0;
+            let  option4 = 0;
+
+            
+            M_cosole();
+            function M_cosole()
+            {
+
+                option =prompt('Escribe el tipo de operacion.\n1.Suma\n2.Resta\n3.Multiplicacion\n4.Division\n5.Potencia','');
+                option1 =prompt('Escribe el numero 1 :','');
+                option2 =prompt('Escribe el numero 2 :','');
+                Calcular();
+                option4 =prompt('Desea hacer otra operacion? S| N','');
+                Obteneropc(option4);
+
+            }
+
+            function Calcular()
+            {
+                let b = parseInt(option1);
+                let c = parseInt(option2);
+                let topt = parseInt(option);
+                let m =  calculo(b,topt,c);
+                return  alert("El resultado de la operacion: "+m);
+            }
+            function Obteneropc(r)
+            {
+                    switch(r)
+                    {
+                        case 'S':M_cosole();
+                        case 'N':document.write('Calculadora Ewin Rojas Narciso. ');
+                    }
+            }
+            function calculo(u1,tv,u2) 
+            {
+                let badmin = 0;
+                switch(tv)
+                {
+                    case 1: return badmin = u1+u2;
+                    case 2:return  badmin = u1-u2;
+                    case 3:return  badmin = u1*u2;
+                    case 4:return  badmin = u1/u2;
+                    case 5:return  badmin = Math.pow(u1, u2);
+                }
+            }
+            //Problema 1
+            function caracteres_p()
+            {
+                let palabra = "Hola mundo";
+                console.log('La palabra devuelve '+palabra.length);
+            }
+            //Problema 2--Cortar letra
+            function recortarc()
+            {
+                let palabra = "Hola mundo";
+                console.log(palabra.slice(0,3));
+            }
+            //Problema 3- sperar
+            function separar() 
+            {
+                let texto = "Hola que tal";
+                console.log(texto.split(' '));
+            }
+            //Problema 4 
+            function llamarVeces(v)
+            {
+                let palabra = "Hola edwind";
+                console.log(palabra.repeat(v));
+            }
+            //Problema 5
+            function reverse()
+            {
+                let palabra = "Hola mundo";
+                return palabra.split("").reverse().join("");
+            }
+            //problema 6
+            function Busqueda(strin, palabra) {
+            let textoe = strin.split(" ");
+            let contador = 0;
+            for (let i = 0; i < textoe.length; i++) {
+                if (textoe[i] == palabra) contador++;
+                
+            }
+            console.log(`${palabra} se encontro ${contador}  veces`);
+            }
+            Busqueda("hola mundo edwind mundo es mundo", "mundo");    
+            //problema  7
+            function Comprobar_Texto(texto) 
+            {
+                const lect = texto.split("").reverse().join("");
+                if( lect === texto)
+                {
+                    return true;
+                }else 
+                {
+                    return false;
+                }
+            }
+            Comprobar_Texto("salas");
+            //
+            function QuitarX(convertir, conver) 
+            {
+                let resultante = convertir.split(",");
+                let cadenas = "";
+                for (let i = 0; i < resultante.length; i++) 
+                {
+                    cadenas += resultante[i].replace(conver, "");
+                }
+                console.log(cadenas);
+            }
+            QuitarX("xyz1 , xyz2 , xyz3 , xyz4 ,y xyz5", "xyz");        
+
+
+        </script>
+    
+</body>
+</html>
